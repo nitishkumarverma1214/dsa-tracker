@@ -8,6 +8,21 @@ import { useEffect } from "react";
 function Navbar() {
   const [isMenuToggle, setIsMenuToggle] = useState(false);
   const isMediumScreen = UseMediaQuery("(min-width:768px)");
+  const [isScreenTop, setIsScreenTop] = useState(true);
+  const [navbarBgColor, setnavbarBgColor] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY !== 0) {
+        setnavbarBgColor("#273444");
+      }
+      if (window.scrollY === 0) {
+        setnavbarBgColor("");
+      }
+    });
+
+    return () => {};
+  }, [isScreenTop]);
 
   const handleMenu = () => {
     setIsMenuToggle(!isMenuToggle);
@@ -15,7 +30,10 @@ function Navbar() {
 
   return (
     <>
-      <div className="border-b-white border-b-2 flex justify-between fixed w-full z-2">
+      <div
+        className="border-b-white border-b-2 flex justify-between sticky top-0 h-28 w-full z-10"
+        style={{ backgroundColor: navbarBgColor }}
+      >
         {/* Brand Logo  */}
         <div className="brand-logo font-bold p-8 text-xl font-playFair">
           DSA <span className="text-blue">Tracker</span>
@@ -41,12 +59,12 @@ function Navbar() {
         )}
       </div>
       {isMenuToggle && !isMediumScreen && (
-        <div>
+        <div className="fixed z-20">
           <div
             className="backdrop w-full h-full bg-light-gray fixed z-1"
             onClick={handleMenu}
           ></div>
-          <div className="h-full w-2/3 fixed z-10 bg-blue right-0 flex flex-col">
+          <div className="h-full w-2/3 fixed z-20 bg-blue right-0 flex flex-col">
             <div className="ml-auto p-4 mb-4" onClick={handleMenu}>
               <img
                 src={closeMenu}
