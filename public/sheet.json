@@ -70,6 +70,28 @@
       "Done": false,
       "URL": "https://leetcode.com/problems/partition-equal-subset-sum",
       "id": 6
+    },
+    {
+      "Topic": "Graph",
+      "Problem": "Word Search",
+      "Done": false,
+      "URL": "https://leetcode.com/problems/word-search",
+      "id": 6
+    },
+
+    {
+      "Topic": "Graph",
+      "Problem": "Minimum Height Trees",
+      "Done": false,
+      "URL": "https://leetcode.com/problems/minimum-height-trees",
+      "id": 6
+    },
+    {
+      "Topic": "Heap",
+      "Problem": "K Closest Points to Origin",
+      "Done": false,
+      "URL": "https://leetcode.com/problems/k-closest-points-to-origin",
+      "id": 6
     }
   ]
 }

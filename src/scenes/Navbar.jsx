@@ -31,11 +31,11 @@ function Navbar() {
   return (
     <>
       <div
-        className="border-b-white border-b-2 flex justify-between sticky top-0 h-28 w-full z-10"
+        className="border-b-white border-b-2 flex justify-between sticky top-0 h-28 w-full z-10 font-playFair"
         style={{ backgroundColor: navbarBgColor }}
       >
         {/* Brand Logo  */}
-        <div className="brand-logo font-bold p-8 text-xl font-playFair">
+        <div className="brand-logo font-bold p-8 text-xl ">
           DSA <span className="text-blue">Tracker</span>
         </div>
 
