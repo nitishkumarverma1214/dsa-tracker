@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
+    extend: {
+      backgroundImage: {
+        customer: "url('./src/assets/customer.jpg')",
+      },
+    },
     screens: {
       sm: "480px",
       md: "768px",
@@ -19,6 +24,7 @@ module.exports = {
       green: "#13ce66",
       yellow: "#ffc82c",
       black: "#222831",
+      "dark-black": "#000000",
       "light-black": "#393E46",
       "dark-grey": "#273444",
       gray: "#BBBBBB",
@@ -42,6 +48,8 @@ font-family: 'Playfair Display', serif;
     fontFamily: {
       montserrat: ["Montserrat", "sans-serif"],
       playFair: ["Playfair Display", "serif"],
+      heebo: ["Heebo", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
     },
   },
   plugins: [],

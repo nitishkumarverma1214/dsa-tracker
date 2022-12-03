@@ -31,11 +31,11 @@ function Navbar() {
   return (
     <>
       <div
-        className="border-b-white border-b-2 flex justify-between sticky top-0 h-28 w-full z-10 font-playFair"
+        className="border-b-white border-b-2 flex justify-between items-center sticky top-0 h-28 w-full z-10 font-heebo"
         style={{ backgroundColor: navbarBgColor }}
       >
         {/* Brand Logo  */}
-        <div className="brand-logo font-bold p-8 text-xl ">
+        <div className="brand-logo font-extrabold p-8 text-3xl ">
           DSA <span className="text-blue">Tracker</span>
         </div>
 
@@ -72,7 +72,10 @@ function Navbar() {
                 className="h-[40px] w-[40px]"
               />
             </div>
-            <ul className="flex flex-col items-center gap-5 px-4 mx-4 font-semibold">
+            <ul
+              className="flex flex-col items-center gap-5 px-4 mx-4 font-semibold"
+              onClick={handleMenu}
+            >
               <li>
                 <a href="#about">About</a>
               </li>
