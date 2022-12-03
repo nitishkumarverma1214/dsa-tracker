@@ -1,32 +1,38 @@
 import React from "react";
-import { useState } from "react";
 import UseMediaQuery from "../hooks/useMediaQuery";
 import menu from "../assets/menu-icon.svg";
-import closeMenu from "../assets/close-icon.svg";
+
 import { useEffect } from "react";
+import Sidenav from "./Sidenav";
+import { useReducer } from "react";
+import navReducer from "../reducers/navReducer";
 
 function Navbar() {
-  const [isMenuToggle, setIsMenuToggle] = useState(false);
   const isMediumScreen = UseMediaQuery("(min-width:768px)");
-  const [isScreenTop, setIsScreenTop] = useState(true);
+
+  const initialNavState = {
+    isMenuToggle: false,
+    isScreenTop: true,
+  };
+
+  const [navState, dispatch] = useReducer(navReducer, initialNavState);
 
   const listenScroll = () => {
-    if (window.scrollY !== 0) {
-      setIsScreenTop(false);
-    }
-    if (window.scrollY === 0) {
-      setIsScreenTop(true);
-    }
+    dispatch({
+      type: "scroll",
+    });
   };
 
   useEffect(() => {
     window.addEventListener("scroll", listenScroll);
 
     return () => window.removeEventListener("scroll", listenScroll);
-  }, [isScreenTop]);
+  }, [navState.isScreenTop]);
 
   const handleMenu = () => {
-    setIsMenuToggle(!isMenuToggle);
+    dispatch({
+      type: "toggle",
+    });
   };
 
   return (
@@ -52,7 +58,7 @@ function Navbar() {
             </li>
           </ul>
         ) : (
-          // Navbar for small screen
+          // Navbar for small screen --- hamberger button
           <div className="h-[40px] w-[40px] my-auto mx-4  p-2">
             <button onClick={handleMenu}>
               <img src={menu} alt="menu-icon" className="h-full w-full" />
@@ -61,36 +67,7 @@ function Navbar() {
         )}
       </div>
       {/* Sidenav for small screen */}
-      <div
-        className={`fixed z-20 transition-transform ease-linear duration-1000 h-full w-full translate-x-full ${
-          isMenuToggle ? "translate-x-0 " : "translate-x-full"
-        }`}
-      >
-        <div
-          className="backdrop w-full h-full bg-light-gray fixed z-1"
-          onClick={handleMenu}
-        ></div>
-        <div className="h-full w-2/3 fixed z-20 bg-blue right-0 flex flex-col">
-          <div className="ml-auto p-4 mb-4" onClick={handleMenu}>
-            <img
-              src={closeMenu}
-              alt="close-icon"
-              className="h-[40px] w-[40px]"
-            />
-          </div>
-          <ul
-            className="flex flex-col items-center gap-5 px-4 mx-4 font-semibold"
-            onClick={handleMenu}
-          >
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact"> Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Sidenav isMenuToggle={navState.isMenuToggle} handleMenu={handleMenu} />
     </>
   );
 }
