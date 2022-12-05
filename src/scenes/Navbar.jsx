@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Sidenav from "./Sidenav";
 import { useReducer } from "react";
 import navReducer from "../reducers/navReducer";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   const isMediumScreen = UseMediaQuery("(min-width:768px)");
@@ -43,18 +44,43 @@ function Navbar() {
         }`}
       >
         {/* Brand Logo  */}
-        <div className="brand-logo font-extrabold p-8 text-3xl ">
-          DSA <span className="text-blue">Tracker</span>
-        </div>
-
+        <Link to="/">
+          <div className="brand-logo font-extrabold p-8 text-3xl cursor-pointer">
+            DSA <span className="text-blue">Tracker</span>
+          </div>
+        </Link>
         {isMediumScreen ? (
           // Navbar for Medium Screen
           <ul className="flex items-center gap-10 px-4 mx-4 font-semibold">
             <li>
-              <a href="#about">About</a>
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-golden-yellow" : ""
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a href="#contact"> Contact Us</a>
+              <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-golden-yellow" : ""
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-golden-yellow" : ""
+                }
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         ) : (

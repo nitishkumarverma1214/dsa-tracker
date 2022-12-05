@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import closeMenu from "../assets/close-icon.svg";
 function Sidenav({ isMenuToggle, handleMenu }) {
   return (
@@ -20,10 +21,34 @@ function Sidenav({ isMenuToggle, handleMenu }) {
           onClick={handleMenu}
         >
           <li>
-            <a href="#about">About</a>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isActive ? "text-golden-yellow" : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="#contact"> Contact Us</a>
+            <NavLink
+              to="/about"
+              className={({ isActive, isPending }) =>
+                isActive ? "text-golden-yellow" : ""
+              }
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive, isPending }) =>
+                isActive ? "text-golden-yellow" : ""
+              }
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>
