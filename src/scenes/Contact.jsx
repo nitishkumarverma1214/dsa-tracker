@@ -10,6 +10,7 @@ function Contact() {
         action=""
         method="post"
         className=" p-4 m-2 grid gap-2 md:w-3/5 md:m-auto"
+        data-netlify="true"
       >
         <label htmlFor="name" className="font-montserrat capitalize mx-1">
           Name
