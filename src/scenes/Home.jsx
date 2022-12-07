@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+export const urlFormat = (topic) => {
+  return topic.toLowerCase().split(" ").join("_");
+};
 function Home({ questionSet }) {
   const navigate = useNavigate();
 
-  const urlFormat = (topic) => {
-    return topic.toLowerCase().split(" ").join("_");
-  };
   const handleTopicSelection = (topic) => {
     navigate(urlFormat(topic));
   };

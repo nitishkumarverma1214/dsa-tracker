@@ -1,7 +1,7 @@
 import { useEffect, createContext } from "react";
 import "./App.css";
 import Contact from "./scenes/Contact";
-import Home from "./scenes/Home";
+import Home, { urlFormat } from "./scenes/Home";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
 import { createBrowserRouter } from "react-router-dom";
@@ -98,16 +98,22 @@ function App() {
           path="/register"
           element={<Register setIsLoggedIn={setIsLoggedIn} />}
         />
-
-        <Route path="/array" element={<Topic data={questionSet[0]} />} />
-        <Route path="/string" element={<Topic data={questionSet[1]} />} />
+        {questionSet &&
+          questionSet.length > 0 &&
+          questionSet.map((questionType) => (
+            <Route
+              path={`${urlFormat(questionType.topic)}`}
+              element={<Topic data={questionType} />}
+            />
+          ))}
+        {/* <Route path="/string" element={<Topic data={questionSet[1]} />} />
         <Route path="/binary_tree" element={<Topic data={questionSet[2]} />} />
         <Route path="/graph" element={<Topic data={questionSet[3]} />} />
         <Route path="/heap" element={<Topic data={questionSet[4]} />} />
         <Route
           path="/dynamic_programming"
           element={<Topic data={questionSet[5]} />}
-        />
+        /> */}
       </Route>
     )
   );
