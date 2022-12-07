@@ -26,7 +26,6 @@ import Register from "./scenes/Register";
 export const LoginContext = createContext(null);
 
 function App() {
-  // const db = useRef(new Localbase("db"));
   const [questionSet, setQuestionsSet] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
