@@ -8,10 +8,10 @@ function Contact() {
       </h2>
       <form
         action=""
-        method="post"
         className=" p-4 m-2 grid gap-2 md:w-3/5 md:m-auto"
+        name="contact"
+        method="POST"
         data-netlify="true"
-        netlify
       >
         <label htmlFor="name" className="font-montserrat capitalize mx-1">
           Name

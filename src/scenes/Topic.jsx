@@ -19,7 +19,12 @@ function Topic({ data }) {
               className="grid grid-cols-[1fr_3fr_1fr] h-14 gap-4 font-roboto text-center m-4 border-b-light-blue border-b-2"
             >
               <div>{question.id}</div>
-              <div>{question.Problem}</div>
+              <div>
+                <a href={question.URL} target="_blank">
+                  {" "}
+                  {question.Problem}
+                </a>
+              </div>
               <div>
                 <input type="checkbox" name="" id="" value={question.Done} />
               </div>
