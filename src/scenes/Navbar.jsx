@@ -7,8 +7,11 @@ import Sidenav from "./Sidenav";
 import { useReducer } from "react";
 import navReducer from "../reducers/navReducer";
 import { NavLink, Link } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../App";
 
 function Navbar() {
+  const loginContext = useContext(LoginContext);
   const isMediumScreen = UseMediaQuery("(min-width:768px)");
 
   const initialNavState = {
@@ -82,6 +85,13 @@ function Navbar() {
                 Contact
               </NavLink>
             </li>
+            {loginContext.isLoggedIn && (
+              <li>
+                <NavLink to="/" onClick={loginContext.logout}>
+                  Logout
+                </NavLink>
+              </li>
+            )}
           </ul>
         ) : (
           // Navbar for small screen --- hamberger button

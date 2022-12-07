@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import closeMenu from "../assets/close-icon.svg";
+import { LoginContext } from "../App";
 function Sidenav({ isMenuToggle, handleMenu }) {
+  const loginContext = useContext(LoginContext);
   return (
     <div
       className={`fixed z-20 transition-transform ease-linear duration-1000 h-full w-full translate-x-full ${
@@ -50,6 +53,13 @@ function Sidenav({ isMenuToggle, handleMenu }) {
               Contact
             </NavLink>
           </li>
+          {loginContext.isLoggedIn && (
+            <li>
+              <NavLink to="/" onClick={loginContext.logout}>
+                Logout
+              </NavLink>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -62,14 +62,14 @@
         "Problem": "Invert Binary Tree",
         "Done": false,
         "URL": "https://leetcode.com/problems/invert-binary-tree",
-        "id": 6
+        "id": 7
       },
       {
         "Topic": "Binary Tree",
         "Problem": "Balanced Binary Tree",
         "Done": false,
         "URL": "https://leetcode.com/problems/balanced-binary-tree",
-        "id": 6
+        "id": 8
       }
     ]
   },
@@ -103,7 +103,7 @@
         "Problem": "K Closest Points to Origin",
         "Done": false,
         "URL": "https://leetcode.com/problems/k-closest-points-to-origin",
-        "id": 6
+        "id": 9
       }
     ]
   },
@@ -116,7 +116,7 @@
         "Problem": "Climbing Stairs",
         "Done": false,
         "URL": "https://leetcode.com/problems/climbing-stairs",
-        "id": 7
+        "id": 10
       }
     ]
   }
