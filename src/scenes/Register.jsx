@@ -41,7 +41,6 @@ function Register({ setIsLoggedIn }) {
       </h2>
       <form
         onSubmit={handleSubmit}
-        action=""
         method="post"
         className="m-4 border-light-blue border-2 font-montserrat grid gap-2 p-4 md:w-3/5 md:m-auto md:grid-cols-2"
       >

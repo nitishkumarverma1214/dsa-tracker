@@ -51,7 +51,8 @@ function Login({ setIsLoggedIn }) {
           name="email"
           id="email"
           className="text-dark-black p-2"
-          onClick={(event) =>
+          value={loginCred.email}
+          onChange={(event) =>
             setLoginCred({ ...loginCred, email: event.target.value })
           }
         />
@@ -62,7 +63,8 @@ function Login({ setIsLoggedIn }) {
           name="password"
           id="password"
           className="text-dark-black p-2"
-          onClick={(event) =>
+          value={loginCred.password}
+          onChange={(event) =>
             setLoginCred({ ...loginCred, password: event.target.value })
           }
         />

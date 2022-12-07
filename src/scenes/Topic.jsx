@@ -2,8 +2,11 @@ import React from "react";
 
 function Topic({ data }) {
   return (
-    <div className="md:w-[768px] mx-auto mt-4 md:mt-8">
-      <div className="capitalize grid grid-cols-[1fr_3fr_1fr] h-8 gap-2 font-roboto font-semibold m-4 border-b-light-blue border-b-2 pb-4 text-center">
+    <div className="md:w-[768px] mx-auto mt-4 md:mt-8 font-montserrat">
+      <h2 className="text-center font-bold mb-8 text-2xl">
+        {data.topic}'s Questions
+      </h2>
+      <div className="capitalize grid grid-cols-[1fr_3fr_1fr] h-8 gap-2  font-semibold m-4 border-b-light-blue border-b-2 pb-4 text-center">
         {/* Heading */}
         <div className="">ID</div>
         <div className="">Question</div>

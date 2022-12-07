@@ -22,6 +22,7 @@ import {
 } from "firebase/firestore";
 import Login from "./scenes/Login";
 import Register from "./scenes/Register";
+import FormSuccess from "./scenes/FormSuccess";
 
 export const LoginContext = createContext(null);
 
@@ -92,6 +93,7 @@ function App() {
         />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/form-submit" element={<FormSuccess />} />
         <Route
           path="/register"
           element={<Register setIsLoggedIn={setIsLoggedIn} />}

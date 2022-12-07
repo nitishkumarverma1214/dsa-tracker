@@ -82,7 +82,7 @@
         "Problem": "Word Search",
         "Done": false,
         "URL": "https://leetcode.com/problems/word-search",
-        "id": 6
+        "id": 9
       },
 
       {
@@ -90,7 +90,7 @@
         "Problem": "Minimum Height Trees",
         "Done": false,
         "URL": "https://leetcode.com/problems/minimum-height-trees",
-        "id": 6
+        "id": 10
       }
     ]
   },
@@ -103,7 +103,7 @@
         "Problem": "K Closest Points to Origin",
         "Done": false,
         "URL": "https://leetcode.com/problems/k-closest-points-to-origin",
-        "id": 9
+        "id": 11
       }
     ]
   },
@@ -116,7 +116,7 @@
         "Problem": "Climbing Stairs",
         "Done": false,
         "URL": "https://leetcode.com/problems/climbing-stairs",
-        "id": 10
+        "id": 12
       }
     ]
   }

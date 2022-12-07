@@ -12,7 +12,7 @@ function Home({ questionSet }) {
   };
   return (
     <div className="relative z-0 my-4 h-full font-montserrat md:my-8">
-      <h2 className="text-center font-semibold text-xl text-green md:text-3xl mx-4 pb-4">
+      <h2 className="text-center font-semibold text-xl text-golden-yellow md:text-3xl mx-4 pb-4">
         Ace your DSA skills with this sheet 🔥 🔥 🔥
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 mx-auto w-4/5  gap-4 md:gap-8 ">
