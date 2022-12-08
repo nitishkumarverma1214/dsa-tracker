@@ -106,14 +106,6 @@ function App() {
               element={<Topic data={questionType} />}
             />
           ))}
-        {/* <Route path="/string" element={<Topic data={questionSet[1]} />} />
-        <Route path="/binary_tree" element={<Topic data={questionSet[2]} />} />
-        <Route path="/graph" element={<Topic data={questionSet[3]} />} />
-        <Route path="/heap" element={<Topic data={questionSet[4]} />} />
-        <Route
-          path="/dynamic_programming"
-          element={<Topic data={questionSet[5]} />}
-        /> */}
       </Route>
     )
   );

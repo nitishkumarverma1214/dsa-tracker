@@ -96,7 +96,7 @@ function Navbar() {
         ) : (
           // Navbar for small screen --- hamberger button
           <div className="h-[40px] w-[40px] my-auto mx-4  p-2">
-            <button onClick={handleMenu}>
+            <button onClick={handleMenu} className="h-full">
               <img src={menu} alt="menu-icon" className="h-full w-full" />
             </button>
           </div>
