@@ -102,6 +102,7 @@ function App() {
           questionSet.length > 0 &&
           questionSet.map((questionType) => (
             <Route
+              key={questionType.topic}
               path={`${urlFormat(questionType.topic)}`}
               element={<Topic data={questionType} />}
             />

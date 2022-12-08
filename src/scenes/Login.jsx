@@ -12,39 +12,30 @@ function Login({ setIsLoggedIn }) {
   };
 
   const [loginCred, setLoginCred] = useState(initialState);
+  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
   const login = async () => {
     try {
-      console.log(loginCred);
       await signInWithEmailAndPassword(
         auth,
         loginCred.email,
         loginCred.password
       );
       setLoginCred(initialState);
+      setErrorMessage(null);
       setIsLoggedIn(true);
       navigate("/");
     } catch (error) {
       console.log(error.message);
+      setErrorMessage("Invalid Email/Password");
     }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    console.log("form submitted");
   };
 
   return (
     <div>
       <h2 className="font-roboto font-bold text-center my-4 text-2xl">Login</h2>
-      <form
-        onSubmit={handleSubmit}
-        action=""
-        method="post"
-        className="m-4 border-light-blue border-2 font-montserrat grid gap-2 p-4 md:w-3/5 md:m-auto md:grid-cols-2"
-      >
+      <div className="m-4 border-light-blue border-2 font-montserrat grid gap-2 p-4 md:w-3/5 md:m-auto md:grid-cols-2">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -81,7 +72,10 @@ function Login({ setIsLoggedIn }) {
           </Link>{" "}
           for free{" "}
         </h3>
-      </form>
+        {errorMessage && (
+          <p className="md:col-span-2 text-red mx-auto">{errorMessage}</p>
+        )}
+      </div>
     </div>
   );
 }
